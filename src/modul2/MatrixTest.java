@@ -23,18 +23,30 @@ public class MatrixTest {
 
     @Test
     public void fill() throws Exception {
-        Matrix matrixTest = new Matrix(5,5);
         matrix.fill();
-        matrixTest.fill();
-        Assert.assertArrayEquals(matrix.getArray(), matrixTest.getArray());
+        int[][] array = matrix.getArray();
+        for (int row = 0; row < array.length; row++) {
+            for (int column = 0; column < array[row].length; column++) {
+                Assert.assertNotEquals(array[row][column], 0);
+            }
+        }
 
     }
-    @Test
-    public void getSum() throws Exception {
+    @Test(expected = IllegalArgumentException.class)
+    public void getBoundSum() throws Exception {
         Matrix matrixTest = new Matrix(5,5);
         matrix.fill();
         matrixTest.fill();
-        Assert.assertEquals(matrix.getSumNear(5,5), matrixTest.getSumNear(5,5));
+        Assert.assertNotEquals(matrix.getSumNear(5,5), matrixTest.getSumNear(5,5));
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void getSum() throws Exception {
+        Matrix matrixTest = new Matrix(10,10);
+        matrix.fill();
+        matrixTest.fill();
+        Assert.assertNotEquals(matrix.getSumNear(5,5), matrixTest.getSumNear(5,5));
 
     }
 

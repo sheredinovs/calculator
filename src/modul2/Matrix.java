@@ -26,7 +26,7 @@ public class Matrix {
        Random random = new Random();
        for (int row = 0; row < array.length; row++) {
            for (int column = 0; column < array[row].length; column++) {
-               array[row][column] = random.nextInt(100);
+               array[row][column] = random.nextInt(100) + 1;
            }
        }
    }
@@ -40,7 +40,7 @@ public class Matrix {
            throw new IllegalArgumentException("address can not be less than o " + address1 + "  " + address2);
        }
 
-       if(address1 > array.length ||  address2 > array.length ){
+       if(address1 >= array.length ||  address2 >= array.length ){
            throw new IllegalArgumentException("address can not be more than 10 " + address1 + "  " + address2);
        }
 
