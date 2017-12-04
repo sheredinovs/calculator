@@ -12,7 +12,7 @@ public class MatrixTest {
     Matrix matrix;
     @Before
     public void setUp() throws Exception {
-        matrix = new Matrix();
+        matrix = new Matrix(5,5);
     }
 
     @After
@@ -23,7 +23,7 @@ public class MatrixTest {
 
     @Test
     public void fill() throws Exception {
-        Matrix matrixTest = new Matrix();
+        Matrix matrixTest = new Matrix(5,5);
         matrix.fill();
         matrixTest.fill();
         Assert.assertArrayEquals(matrix.getArray(), matrixTest.getArray());
@@ -31,7 +31,7 @@ public class MatrixTest {
     }
     @Test
     public void getSum() throws Exception {
-        Matrix matrixTest = new Matrix();
+        Matrix matrixTest = new Matrix(5,5);
         matrix.fill();
         matrixTest.fill();
         Assert.assertEquals(matrix.getSumNear(5,5), matrixTest.getSumNear(5,5));

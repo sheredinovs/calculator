@@ -5,11 +5,11 @@ package modul2;
  */
 public class Client {
     public static void main(String[] args) {
-        Matrix matrix = new Matrix();
+        Matrix matrix = new Matrix(5,5);
 
         matrix.fill();
         matrix.print();
-        System.out.println(matrix.getSumNear(5,5));
+       // System.out.println(matrix.getSumNear(5,5));
 
     }
 }

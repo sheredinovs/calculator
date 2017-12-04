@@ -1,24 +1,32 @@
 package modul2;
 
+import java.util.Random;
+
 /**
  * Created by kadyr on 04.12.2017.
  */
 public class Matrix {
-    private int[][] array = new int[10][10];
+    private int[][] array;
+
+
+    public Matrix(int count1, int count2){
+        array = new int[count1][count2];
+    }
 
     public void print(){
-        for (int i = 0; i <10 ; i++) {
-            for (int j = 0; j < 10; j++) {
-                System.out.print(array[i][j]);
+        for (int row = 0; row < array.length; row++) {
+            for (int column = 0; column < array[row].length; column++) {
+                System.out.print(array[row][column] + " ");
             }
             System.out.println();
         }
-   }
+    }
 
    public void fill(){
-       for (int i = 0; i <10 ; i++) {
-           for (int j = 0; j < 10; j++) {
-               array[i][j] = j;
+       Random random = new Random();
+       for (int row = 0; row < array.length; row++) {
+           for (int column = 0; column < array[row].length; column++) {
+               array[row][column] = random.nextInt(100);
            }
        }
    }
@@ -32,7 +40,7 @@ public class Matrix {
            throw new IllegalArgumentException("address can not be less than o " + address1 + "  " + address2);
        }
 
-       if(address1 > 10 || address2 > 10){
+       if(address1 > array.length ||  address2 > array.length ){
            throw new IllegalArgumentException("address can not be more than 10 " + address1 + "  " + address2);
        }
 
