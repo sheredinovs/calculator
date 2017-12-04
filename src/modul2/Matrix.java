@@ -44,9 +44,19 @@ public class Matrix {
            throw new IllegalArgumentException("address can not be more than 10 " + address1 + "  " + address2);
        }
 
-       return array[address1][address2 -1] + array[address1][address2 +1] +
-               array[address1-1][address2] + array[address1 +1][address2];
+       return getElement(address1,address2 -1) + getElement(address1,address2 +1) +
+               getElement(address1 -1,address2) + getElement(address1 +1 ,address2);
 
+   }
+
+   private int getElement(int address1, int address2){
+       int res = 0;
+       try{
+           return res = array[address1][address2];
+       }
+       catch (ArrayIndexOutOfBoundsException e){
+           return res;
+       }
    }
 
 }

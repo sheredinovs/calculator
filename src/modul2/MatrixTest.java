@@ -50,4 +50,14 @@ public class MatrixTest {
 
     }
 
+    @Test
+    public void diffSums() throws Exception {
+        matrix.fill();
+        int sum1 = matrix.getSumNear(3,4);
+        matrix.fill();
+        int sum2 = matrix.getSumNear(3,4);
+        Assert.assertNotEquals(sum1, sum2);
+
+    }
+
 }

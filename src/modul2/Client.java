@@ -9,7 +9,7 @@ public class Client {
 
         matrix.fill();
         matrix.print();
-       // System.out.println(matrix.getSumNear(5,5));
+        System.out.println(matrix.getSumNear(2,1));
 
     }
 }
